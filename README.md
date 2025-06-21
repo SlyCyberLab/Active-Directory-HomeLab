@@ -22,7 +22,7 @@ This home lab demonstrates the setup and configuration of a complete Active Dire
 
 ## 🏗️ Architecture
 <p align="center">
-<img src="https://imgur.com/BQHD8sQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/BQHD8sQ.png" height="80%" width="80%"/>
 <br />
 
 
@@ -48,21 +48,32 @@ This home lab demonstrates the setup and configuration of a complete Active Dire
 </details>
 
 ### Phase 2: Domain Controller Setup
-<details>
+
 <summary>🏛️ Active Directory Configuration</summary>
 
 1. **Network Adapter Configuration**
+<p align="center">
+   Change the two Ethernet Adapter names to: INTERNET & INTERNAL, Then right click on INTERNAL, Open Properties
+<img src="https://imgur.com/EHszkF7.png" height="80%" width="80%"/>
+<br />
+
+<p align="center">
+   Click on IPv4, then Properties to configure the IPv4 for the INTERNAL adapter
+<img src="https://imgur.com/lzZP680.png" height="80%" width="80%"/>
+<br />
+   Gateway is 172.16.0.1 and Subnet Mask is: 255.255.255.0 - for Preffered DNS Server: 127.0.0.1 - Click on Validate Settings upon exit and click OK
+
    ```
    INTERNAL: 172.16.0.1/24 (for clients)
    INTERNET: DHCP/NAT (for external access)
    ```
 
-2. **Install AD DS Role**
+3. **Install AD DS Role**
    ```powershell
    Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
    ```
 
-3. **Promote to Domain Controller**
+4. **Promote to Domain Controller**
    - Forest: `slycyber.local`
    - Functional Level: Windows Server 2022
    - DNS: Install DNS server role
