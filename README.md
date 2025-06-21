@@ -21,52 +21,10 @@ This home lab demonstrates the setup and configuration of a complete Active Dire
 - ✅ Enterprise security best practices
 
 ## 🏗️ Architecture
+<p align="center">
+<img src="https://imgur.com/BQHD8sQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
 
-```
-📊 Network Topology:
-Physical Host (Windows) 
-    ↓
-VMware Workstation
-    ↓
-Host-Only Network (VMnet2: 172.16.0.0/24)
-    ↓
-┌─────────────────────────────────────┐
-│     Windows Server 2025             │
-│  • Domain Controller (slycyber.local)│
-│  • DHCP Server (172.16.0.100-200)   │
-│  • NAT Gateway (172.16.0.1)         │
-└─────────────────┬───────────────────┘
-                  │
-          Windows 11 Clients
-      (Auto-assigned DHCP IPs)
-```
-
-## 🛠️ Technology Stack
-
-| Component | Technology | Purpose |
-|-----------|------------|---------|
-| **Virtualization** | VMware Workstation | Host multiple VMs with network isolation |
-| **Server OS** | Windows Server 2025 | Domain controller and network services |
-| **Client OS** | Windows 11 | Domain-joined workstations |
-| **Directory Services** | Active Directory DS | Centralized authentication and authorization |
-| **Network Services** | DHCP, NAT/RAS | IP management and internet connectivity |
-| **Automation** | PowerShell | Bulk user creation and management |
-| **Network Design** | Custom VMnet | Isolated lab environment |
-
-## 🚀 Quick Start
-
-### Prerequisites
-- VMware Workstation (15.5+)
-- Windows Server 2025 ISO
-- Windows 11 ISO
-- Minimum 8GB RAM, 100GB storage
-
-### Default Credentials
-```
-Domain: slycyber.local
-Username: Administrator
-Password: 1Password
-```
 
 ## 📖 Implementation Guide
 
