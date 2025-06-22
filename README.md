@@ -1,5 +1,9 @@
 # 🏢 Active Directory Home Lab Environment
-
+<!--
+![GitHub repo size](https://img.shields.io/github/repo-size/SlyCyberLab/Active-Directory-HomeLab)
+![Last Commit](https://img.shields.io/github/last-commit/SlyCyberLab/Active-Directory-HomeLab)
+![License](https://img.shields.io/github/license/SlyCyberLab/Active-Directory-HomeLab)
+-->
 > **A comprehensive virtualized Windows Server environment demonstrating enterprise-level Active Directory, DHCP, and NAT configuration skills.**
 
 ![Lab Status](https://img.shields.io/badge/Lab%20Status-Active-brightgreen)
@@ -22,7 +26,7 @@ This home lab demonstrates the setup and configuration of a complete Active Dire
 
 ## 🏗️ Architecture
 <p align="center">
-<img src="https://imgur.com/BQHD8sQ.png" height="80%" width="80%"/>
+<img src="https://i.imgur.com/BQHD8sQ.png" />
 <br />
 
 
@@ -354,8 +358,10 @@ The script will automatically:
 **Email:** [Your Email]
 **Portfolio:** [Your Portfolio Website]
 
----
 
-⭐ **Star this repository if you found it helpful!**
+---
+<p align="center">
+  ⭐️ If this lab helped or inspired you, consider giving it a star — it supports future labs and learning content.
+</p>
 
 > This lab environment serves as a foundation for understanding enterprise Windows infrastructure and can be extended for more advanced scenarios including multi-domain forests, federation services, and hybrid cloud configurations.
