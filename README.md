@@ -250,7 +250,7 @@ The script will automatically:
 - **Default Password:** `1Password` (users must change on first login)
 - **Organizational Unit:** `_USERS` 
 - **Account Status:** Enabled and ready for use
-- **Username Format:** First name + last initial (e.g., "John D")
+- **Username Format:** First initial + last name (e.g., "jdoe")
 
 #### 5. **Organizational Structure Implementation**
 
