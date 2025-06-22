@@ -252,18 +252,60 @@ The script will automatically:
 - **Account Status:** Enabled and ready for use
 - **Username Format:** First name + last initial (e.g., "John D")
 
-**Verification Steps:**
-1. Open **Active Directory Users and Computers**
-2. Navigate to the `_USERS` OU
-3. Verify all accounts were created successfully
-4. Check script logs for any errors or warnings
+#### 5. **Organizational Structure Implementation**
 
-**Logging & Monitoring:**
-- Detailed execution logs generated automatically
-- Error handling for duplicate accounts
-- Success/failure reporting for each user creation
+**Create Enterprise-Level Organization:**
+The lab demonstrates proper enterprise organizational structure with custom OUs for different departments and device types:
 
-> 💡 **Best Practice:** Always review the generated logs to ensure all users were created successfully and troubleshoot any issues.
+<p align="center">  
+  <img src="https://i.imgur.com/zhCoopN.png" alt="Organizational Structure with Custom OUs" width="80%" />
+</p>
+
+**Organizational Units Created:**
+- **SLYCYBER** (Custom OU for enterprise structure)
+  - **Computers** (Desktop and laptop management)
+  - **Users** (Department-based user organization)
+  - **Groups** (Security and distribution groups)
+  - **_USERS** (Automated script-generated users)
+
+> 💡 **Best Practice:** Always create Organizational Units, Groups, etc. to organize users, computers, and resources for better management and security policy application.
+
+### Phase 5: Client Integration & Verification
+
+**🖥️ Domain Client Configuration & Authentication**
+
+#### **End-to-End Functionality Demonstration**
+
+**Domain User Login:**
+PowerShell-automated user successfully authenticating on client VM, proving complete lab functionality:
+
+<p align="center">  
+  <img src="https://i.imgur.com/wl4I3Qt.png" alt="Domain User Login with SLYCYBER credentials" width="80%" />
+</p>
+
+**Successful Authentication Verification:**
+Domain user session established, confirming Active Directory integration works properly:
+
+<p align="center">  
+  <img src="https://i.imgur.com/yuGfb2a.png" alt="whoami command showing domain authentication" width="80%" />
+</p>
+
+**Complete Network & Domain Configuration:**
+Client automatically configured via DHCP with proper domain settings and connectivity:
+
+<p align="center">  
+  <img src="https://i.imgur.com/XvCzWr3.png" alt="ipconfig showing DHCP assignment and domain configuration" width="80%" />
+</p>
+
+#### **Lab Integration Summary**
+**Proven Functionality:**
+- ✅ **User Automation Works:** PowerShell-created users (`aford`) can authenticate successfully
+- ✅ **DHCP Assignment:** Client receives IP from configured scope (172.16.0.100-200)
+- ✅ **DNS Resolution:** Domain controller (172.16.0.1) provides name resolution
+- ✅ **Domain Integration:** Full domain membership with `slycyber.local` suffix
+- ✅ **End-to-End Success:** Complete infrastructure from server setup to client authentication
+
+> 🎯 **Impact:** This demonstrates a fully functional enterprise Active Directory environment where automated user provisioning, network services, and client integration all work seamlessly together.
 
 ## 📊 Lab Capabilities
 
@@ -305,13 +347,10 @@ The script will automatically:
 📦 AD-HomeLabSetup/
 ├── 📂 scripts/
 │   ├── bulk-create-users.ps1
-│   ├── reset-user-password.ps1
-│   └── generate-names.ps1
+│   └── names.txt
 ├── 📂 documentation/
 │   ├── network-diagram.png
 │   └── configuration-screenshots/
-├── 📂 sample-data/
-│   └── names.txt
 ├── README.md
 └── LICENSE
 ```
@@ -357,7 +396,6 @@ The script will automatically:
 **LinkedIn:** [Your LinkedIn Profile]
 **Email:** [Your Email]
 **Portfolio:** [Your Portfolio Website]
-
 
 ---
 <p align="center">
