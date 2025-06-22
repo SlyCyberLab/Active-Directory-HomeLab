@@ -1,9 +1,9 @@
 # 🏢 Active Directory Home Lab Environment
-
+<!--
 ![GitHub repo size](https://img.shields.io/github/repo-size/SlyCyberLab/Active-Directory-HomeLab)
 ![Last Commit](https://img.shields.io/github/last-commit/SlyCyberLab/Active-Directory-HomeLab)
 ![License](https://img.shields.io/github/license/SlyCyberLab/Active-Directory-HomeLab)
-
+-->
 > **A comprehensive virtualized Windows Server environment demonstrating enterprise-level Active Directory, DHCP, and NAT configuration skills.**
 
 ![Lab Status](https://img.shields.io/badge/Lab%20Status-Active-brightgreen)
