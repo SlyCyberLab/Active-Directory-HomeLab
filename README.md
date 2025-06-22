@@ -11,7 +11,7 @@
 
 This home lab demonstrates the setup and configuration of a complete Active Directory environment using VMware virtualization. The project showcases skills in Windows Server administration, network configuration, user management automation, and enterprise security practices.
 
-### 🎯 Learning Objectives Achieved
+### 🎯 Objectives Achieved
 - ✅ Active Directory Domain Services (AD DS) implementation
 - ✅ DHCP server configuration and scope management
 - ✅ Network Address Translation (NAT) setup
@@ -30,7 +30,7 @@ This home lab demonstrates the setup and configuration of a complete Active Dire
 
 ### Phase 1: Network Foundation
 
-<summary>🔧 VMware Network Configuration</summary>
+**🔧 VMware Network Configuration**
 
 1. **Configure Virtual Network Editor**
    ```
@@ -45,18 +45,16 @@ This home lab demonstrates the setup and configuration of a complete Active Dire
 
 3. **Assign to VMs**
    - VM Settings → Network Adapter → Custom → VMnet2
- 
 
 ### Phase 2: Domain Controller Setup
 
-
-<summary>🏛️ Active Directory Configuration</summary>
+**🏛️ Active Directory Configuration**
 
 #### 1. **Network Adapter Configuration**
 
 **Rename Network Adapters:**
 1. Open **Network and Sharing Center** → **Change adapter settings**
-2. Rename adapters to `INTERNET` and `INTERNAL`
+2. Rename adapters to `INTERNAL` and `INTERNET`
 
 <p align="center">  
 <img src="https://imgur.com/EHszkF7.png" height="80%" width="80%"/>
@@ -110,12 +108,9 @@ Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
   <img src="https://i.imgur.com/U3rZpaK.png" alt="Domain Controller Options" height="300px" />
 </p>
 
- 
-
 ### Phase 3: Network Services
 
-
-<summary>🌐 DHCP and NAT Setup</summary>
+**🌐 DHCP and NAT Setup**
 
 #### 1. **Install Required Roles**
 Run these PowerShell commands as Administrator:
@@ -138,7 +133,7 @@ Install-WindowsFeature Routing -IncludeManagementTools
 </p>
 
 **Scope Configuration:**
-- **Scope Name:** `Internal Network`
+- **Scope Name:** `(you can give it the IP range name)`
 - **IP Range:** `172.16.0.100 - 172.16.0.200`
 - **Subnet Mask:** `255.255.255.0`
 - **Default Gateway:** `172.16.0.1`
@@ -186,30 +181,85 @@ Install-WindowsFeature Routing -IncludeManagementTools
 4. **External Interface:** INTERNET adapter
 5. **Internal Interface:** INTERNAL adapter
 
-> 💡 **Purpose:** NAT allows internal clients to access the internet through the domain controller while maintaining network isolation.
+<p align="center">
+  <img src="https://i.imgur.com/KFkqk5B.png" alt="Routing and Remote Access Setup" height="300px" width="400px" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://i.imgur.com/mhh4rDV.png" alt="NAT Configuration" height="300px" width="400px" />
+</p>
 
- 
+<p align="center">
+  <img src="https://i.imgur.com/ThFVVef.png" alt="Interface Selection" height="300px" width="400px" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://i.imgur.com/eBIsPuf.png" alt="NAT Setup Complete" height="300px" width="400px" />
+</p>
+
+> 💡 **Purpose:** NAT allows internal clients to access the internet through the domain controller while maintaining network isolation.
 
 ### Phase 4: User Management Automation
 
-<summary>👥 PowerShell Bulk User Creation</summary>
+**👥 PowerShell Bulk User Creation**
 
-**Files Required:**
-- `names.txt` - List of users (First Last format)
-- [`bulk-create-users.ps1`](./scripts/bulk-create-users.ps1) - Main automation script
+#### 1. **Prepare Required Files**
 
-**Execution:**
+**Files Needed:**
+- `names.txt` - List of users in "First Last" format
+- [`bulk-create-users.ps1`](./scripts/bulk-create-users.ps1) - PowerShell automation script
+
+#### 2. **Configure PowerShell Execution Policy**
+
+**Launch PowerShell ISE as Administrator:**
+1. Start Menu → Search "PowerShell ISE"
+2. Right-click → **Run as administrator**
+
+**Set Execution Policy:**
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+```
+- When prompted, select **"Yes to All"**
+
+<p align="center">  
+  <img src="https://i.imgur.com/KJslHrT.png" alt="PowerShell Execution Policy Setup" width="80%" />
+</p>
+
+> 🔒 **Security Note:** This allows local script execution for automation tasks. Use carefully in production environments.
+
+#### 3. **Execute User Creation Script**
+
+**Run the Bulk Creation Script:**
+```powershell
 .\bulk-create-users.ps1
 ```
 
-**Features:**
-- Creates users in `_USERS` OU
-- Sets default password: `1Password`
-- Enables accounts automatically
-- Generates detailed logs
- 
+The script will automatically:
+- Read user names from `names.txt`
+- Create user accounts in the `_USERS` Organizational Unit
+- Set default passwords and account properties
+- Generate execution logs
+
+<p align="center">  
+  <img src="https://i.imgur.com/5aNFo6X.png" alt="Script Execution in Progress" width="80%" />
+</p>
+
+#### 4. **Script Features & Results**
+
+**Automated Configurations:**
+- **Default Password:** `1Password` (users must change on first login)
+- **Organizational Unit:** `_USERS` 
+- **Account Status:** Enabled and ready for use
+- **Username Format:** First name + last initial (e.g., "John D")
+
+**Verification Steps:**
+1. Open **Active Directory Users and Computers**
+2. Navigate to the `_USERS` OU
+3. Verify all accounts were created successfully
+4. Check script logs for any errors or warnings
+
+**Logging & Monitoring:**
+- Detailed execution logs generated automatically
+- Error handling for duplicate accounts
+- Success/failure reporting for each user creation
+
+> 💡 **Best Practice:** Always review the generated logs to ensure all users were created successfully and troubleshoot any issues.
 
 ## 📊 Lab Capabilities
 
@@ -235,8 +285,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 
 ## 🧪 Common Issues & Solutions
 
-
-<summary>🔍 Troubleshooting Guide</summary>
+**🔍 Troubleshooting Guide**
 
 | Issue | Symptom | Solution |
 |-------|---------|----------|
@@ -245,8 +294,6 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 | **Internet Access Issues** | No external connectivity | Check NAT configuration and routing |
 | **PowerShell Execution** | Script execution disabled | `Set-ExecutionPolicy Unrestricted` |
 | **Domain Join Fails** | Cannot locate domain controller | Verify DNS settings point to DC |
-
- 
 
 ## 📁 Repository Structure
 
