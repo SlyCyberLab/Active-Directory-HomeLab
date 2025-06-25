@@ -100,7 +100,7 @@ This security feature is critical in production - it prevents someone from plugg
 **Troubleshooting Approach:**
 - Don't assume the GUI shows the real state of services
 - Always verify configurations took effect with command-line tools
-- When following tutorials, understand the "why" behind each step
+- Understand the "why" behind each step
 
 **Enterprise Applications:**
 - These same configuration challenges occur in production environments
