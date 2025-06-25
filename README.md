@@ -297,7 +297,14 @@ Client automatically configured via DHCP with proper domain settings and connect
   <img src="https://i.imgur.com/XvCzWr3.png" alt="ipconfig showing DHCP assignment and domain configuration" width="80%" />
 </p>
 
-#### **Lab Integration Summary**
+## **Lab Integration Summary**
+
+### 🔍 Critical Issues & Solutions
+**[→ View Build Process Challenges](LESSONS-LEARNED.md)**
+
+*Some configuration challenges I encountered during implementation and systematic resolution approaches.*
+
+---
 
 **Proven Enterprise-Grade Functionality:**
 
