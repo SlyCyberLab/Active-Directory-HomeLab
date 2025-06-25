@@ -109,4 +109,4 @@ This security feature is critical in production - it prevents someone from plugg
 
 ---
 
-*These build process challenges reflect the reality of enterprise infrastructure configuration - systems that should work according to documentation often require additional troubleshooting and verification.*
+*These build process challenges reflect the reality of enterprise infrastructure configuration, systems that should work according to documentation often require additional troubleshooting and verification.*
