@@ -131,9 +131,9 @@ Install-WindowsFeature Routing -IncludeManagementTools
 2. Expand your server → Right-click **IPv4** → **New Scope**
 
 <p align="center">
-  <img src="https://i.imgur.com/buCKt7L.png" alt="DHCP Console Access" style="max-width: 400px; height: auto;" />
-  &nbsp;&nbsp;&nbsp;
-  <img src="https://i.imgur.com/igXhiTL.png" alt="New Scope Wizard" style="max-width: 400px; height: auto;" />
+  <img src="https://i.imgur.com/buCKt7L.png" alt="DHCP Console Access" width="500" />
+  <br><br>
+  <img src="https://i.imgur.com/igXhiTL.png" alt="New Scope Wizard" width="500" />
 </p>
 
 **Scope Configuration:**
