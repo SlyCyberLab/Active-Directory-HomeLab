@@ -61,8 +61,9 @@ This home lab demonstrates the setup and configuration of a complete Active Dire
 2. Rename adapters to `INTERNAL` and `INTERNET`
 
 <p align="center">  
-<img src="https://imgur.com/EHszkF7.png" height="80%" width="80%"/>
-<br />
+  <img src="https://imgur.com/EHszkF7.png" alt="Description" style="max-width: 80%; height: auto;" />
+  <br />
+</p>
 
 **Configure INTERNAL Adapter:**
 1. Right-click **INTERNAL** → **Properties** → **IPv4** → **Properties**
