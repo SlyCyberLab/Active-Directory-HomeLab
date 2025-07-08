@@ -75,8 +75,9 @@ This home lab demonstrates the setup and configuration of a complete Active Dire
 3. Check "Validate settings upon exit" → **OK**
 
 <p align="center">
-<img src="https://imgur.com/GXoTgBb.png" height="80%" width="80%"/>
-<br />
+  <img src="https://imgur.com/GXoTgBb.png" alt="Description" style="max-width: 80%; height: auto;" />
+  <br />
+</p>
 
 > ⚠️ **Important:** Leave gateway blank on INTERNAL adapter to prevent routing conflicts.
 
@@ -88,9 +89,9 @@ This home lab demonstrates the setup and configuration of a complete Active Dire
 3. Include management tools → **Install**
 
 <p align="center">
-  <img src="https://i.imgur.com/hnqH4Kf.png" alt="Add Roles and Features" height="300px" />
+  <img src="https://i.imgur.com/hnqH4Kf.png" alt="Add Roles and Features" style="max-width: 400px; height: auto;" />
   &nbsp;&nbsp;&nbsp;
-  <img src="https://i.imgur.com/wL6Qx1q.png" alt="Select AD DS Role" height="300px" />
+  <img src="https://i.imgur.com/wL6Qx1q.png" alt="Select AD DS Role" style="max-width: 400px; height: auto;" />
 </p>
 
 **PowerShell Method:**
@@ -108,9 +109,9 @@ Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 6. **Install** (server will restart)
 
 <p align="center">
-  <img src="https://i.imgur.com/SGM2IRP.png" alt="Deployment Configuration" height="300px" />
+  <img src="https://i.imgur.com/SGM2IRP.png" alt="Deployment Configuration" style="max-width: 400px; height: auto;" />
   &nbsp;&nbsp;&nbsp;
-  <img src="https://i.imgur.com/U3rZpaK.png" alt="Domain Controller Options" height="300px" />
+  <img src="https://i.imgur.com/U3rZpaK.png" alt="Domain Controller Options" style="max-width: 400px; height: auto;" />
 </p>
 
 ### Phase 3: Network Services
@@ -132,9 +133,9 @@ Install-WindowsFeature Routing -IncludeManagementTools
 2. Expand your server → Right-click **IPv4** → **New Scope**
 
 <p align="center">
-  <img src="https://i.imgur.com/buCKt7L.png" alt="DHCP Console Access" width="500" />
+  <img src="https://i.imgur.com/buCKt7L.png" alt="DHCP Console Access" style="max-width: 500px; height: auto;" />
   <br><br>
-  <img src="https://i.imgur.com/igXhiTL.png" alt="New Scope Wizard" width="500" />
+  <img src="https://i.imgur.com/igXhiTL.png" alt="New Scope Wizard" style="max-width: 500px; height: auto;" />
 </p>
 
 **Scope Configuration:**
@@ -156,7 +157,7 @@ Install-WindowsFeature Routing -IncludeManagementTools
 - Scope should show as "Active"
 
 <p align="center">
-  <img src="https://imgur.com/fXDutTz.png" alt="DHCP Scope Active" height="300px" />
+  <img src="https://imgur.com/fXDutTz.png" alt="DHCP Scope Active" style="max-width: 500px; height: auto;" />
 </p>
 
 #### 3. **Configure Server Options**
@@ -172,10 +173,11 @@ Install-WindowsFeature Routing -IncludeManagementTools
 2. **All Tasks** → **Restart**
 
 <p align="center">
-  <img src="https://i.imgur.com/F4EBgZP.png" alt="Configure Server Options" height="300px" />
+  <img src="https://i.imgur.com/F4EBgZP.png" alt="Configure Server Options" style="max-width: 400px; height: auto;" />
   &nbsp;&nbsp;&nbsp;
-  <img src="https://i.imgur.com/scoQJLs.png" alt="DNS Server Configuration" height="300px" />
+  <img src="https://i.imgur.com/scoQJLs.png" alt="DNS Server Configuration" style="max-width: 400px; height: auto;" />
 </p>
+
 
 #### 4. **Setup NAT (Network Address Translation)**
 
@@ -197,6 +199,7 @@ Install-WindowsFeature Routing -IncludeManagementTools
   &nbsp;&nbsp;&nbsp;
   <img src="https://i.imgur.com/eBIsPuf.png" alt="NAT Setup Complete" height="300px" width="400px" />
 </p>
+
 
 > 💡 **Purpose:** NAT allows internal clients to access the internet through the domain controller while maintaining network isolation.
 
@@ -223,7 +226,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 - When prompted, select **"Yes to All"**
 
 <p align="center">  
-  <img src="https://i.imgur.com/KJslHrT.png" alt="PowerShell Execution Policy Setup" width="80%" />
+  <img src="https://i.imgur.com/KJslHrT.png" alt="PowerShell Execution Policy Setup" style="max-width: 80%; height: auto;" />
 </p>
 
 > 🔒 **Security Note:** This allows local script execution for automation tasks. Use carefully in production environments.
@@ -242,8 +245,9 @@ The script will automatically:
 - Generate execution logs
 
 <p align="center">  
-  <img src="https://i.imgur.com/5aNFo6X.png" alt="Script Execution in Progress" width="80%" />
+  <img src="https://i.imgur.com/5aNFo6X.png" alt="Script Execution in Progress" style="max-width: 80%; height: auto;" />
 </p>
+
 
 #### 4. **Script Features & Results**
 
@@ -259,7 +263,7 @@ The script will automatically:
 The lab demonstrates proper enterprise organizational structure with custom OUs for different departments and device types:
 
 <p align="center">  
-  <img src="https://i.imgur.com/zhCoopN.png" alt="Organizational Structure with Custom OUs" width="80%" />
+  <img src="https://i.imgur.com/zhCoopN.png" alt="Organizational Structure with Custom OUs" style="max-width: 80%; height: auto;" />
 </p>
 
 **Organizational Units Created:**
@@ -281,21 +285,21 @@ The lab demonstrates proper enterprise organizational structure with custom OUs 
 PowerShell-automated user successfully authenticating on client VM, proving complete lab functionality:
 
 <p align="center">  
-  <img src="https://i.imgur.com/wl4I3Qt.png" alt="Domain User Login with SLYCYBER credentials" width="80%" />
+  <img src="https://i.imgur.com/wl4I3Qt.png" alt="Domain User Login with SLYCYBER credentials" style="max-width: 80%; height: auto;" />
 </p>
 
 **Successful Authentication Verification:**
 Domain user session established, confirming Active Directory integration works properly:
 
 <p align="center">  
-  <img src="https://i.imgur.com/yuGfb2a.png" alt="whoami command showing domain authentication" width="80%" />
+  <img src="https://i.imgur.com/yuGfb2a.png" alt="whoami command showing domain authentication" style="max-width: 80%; height: auto;" />
 </p>
 
 **Complete Network & Domain Configuration:**
 Client automatically configured via DHCP with proper domain settings and connectivity:
 
 <p align="center">  
-  <img src="https://i.imgur.com/XvCzWr3.png" alt="ipconfig showing DHCP assignment and domain configuration" width="80%" />
+  <img src="https://i.imgur.com/XvCzWr3.png" alt="ipconfig showing DHCP assignment and domain configuration" style="max-width: 80%; height: auto;" />
 </p>
 
 ## **Lab Integration Summary**
